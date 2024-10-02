@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/signup.css" />
+
+</head>
+<body >
+   <div class="bouncing-blobs-container">
+     <div class="bouncing-blobs-glass"></div>
+     <div class="bouncing-blobs">
+         <div class="bouncing-blob bouncing-blob--blue"></div>
+         <div class="bouncing-blob bouncing-blob--blue"></div>
+         <div class="bouncing-blob bouncing-blob--blue"></div>
+         <div class="bouncing-blob bouncing-blob--white"></div>
+         <div class="bouncing-blob bouncing-blob--purple"></div>
+         <div class="bouncing-blob bouncing-blob--purple"></div>
+         <div class="bouncing-blob bouncing-blob--pink"></div>
+     </div>
+ </div>
+  <header class="header">
+    <nav class="nav-items">
+        <div class="logo-container">
+            <img src="/pic/h.png" class="logo" />
+        </div>
+        <h5>CRIME GUARD</h5>
+
+
+       <div class="ab">
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/report">Report</a>
+        <a href="/contactus">Contact</a>
+
+        <a href="/signup">Registeration</a>
+        </div>
+    </nav>
+</header>
+
+
+   <div>
+    <form id="signupForm" class="modal-content" action="/signup" method="POST"> <!-- Update action to your signup route -->
+      <div class="container">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <label for="fname"><b>First Name</b></label>
+        <input type="text" placeholder="Enter First Name" id="fname" name="fname" required>
+
+        <label for="lname"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" id="lname" name="lname" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+       <div> <span id="emailError" style="color: red; display: none;">Please enter a valid email address</span></div>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="password" name="password" minlength="6" required> <!-- Correct name attribute -->
+
+       
+
+        
+        <br>
+        
+
+        <p>By creating an account you agree to our <a href="term&privacy.html" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+        <div class="clearfix">
+          <p>Already have an account? <a href="/login" style="color:dodgerblue">Login</a></p>
+          <input class="button2" type="submit">
+        </div>
+      </div>
+    </form>
+  </div>
+
+    
+  
+   
+
+
+ <script>
+     const MIN_SPEED = 1.5
+     const MAX_SPEED = 2.5
+
+     function randomNumber(min, max) {
+         return Math.random() * (max - min) + min
+     }
+
+     class Blob {
+         constructor(el) {
+             this.el = el
+             const boundingRect = this.el.getBoundingClientRect()
+             this.size = boundingRect.width
+             this.initialX = randomNumber(0, window.innerWidth - this.size)
+             this.initialY = randomNumber(0, window.innerHeight - this.size)
+             this.el.style.top = `${this.initialY}px`
+             this.el.style.left = `${this.initialX}px`
+             this.vx =
+                 randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+             this.vy =
+                 randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+             this.x = this.initialX
+             this.y = this.initialY
+         }
+
+         update() {
+             this.x += this.vx
+             this.y += this.vy
+             if (this.x >= window.innerWidth - this.size) {
+                 this.x = window.innerWidth - this.size
+                 this.vx *= -1
+             }
+             if (this.y >= window.innerHeight - this.size) {
+                 this.y = window.innerHeight - this.size
+                 this.vy *= -1
+             }
+             if (this.x <= 0) {
+                 this.x = 0
+                 this.vx *= -1
+             }
+             if (this.y <= 0) {
+                 this.y = 0
+                 this.vy *= -1
+             }
+         }
+
+         move() {
+             this.el.style.transform = `translate(${this.x - this.initialX}px, ${this.y - this.initialY
+                 }px)`
+         }
+     }
+
+     function initBlobs() {
+         const blobEls = document.querySelectorAll('.bouncing-blob')
+         const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl))
+
+         function update() {
+             requestAnimationFrame(update)
+             blobs.forEach((blob) => {
+                 blob.update()
+                 blob.move()
+             })
+         }
+
+         requestAnimationFrame(update)
+     }
+
+     initBlobs()
+
+ </script>
+ <script>
+ 
+  document.addEventListener('DOMContentLoaded', function () {
+    const signupForm = document.getElementById('signupForm');
+    signupForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const formData = {
+        fname: document.getElementById('fname').value,
+        lname: document.getElementById('lname').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+      };
+
+      fetch('/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => {
+        if (response.ok) {
+          // Redirect to login page or handle success
+          window.location.href = '/login';
+        } else {
+          return response.json();
+        }
+      })
+      .then(data => {
+        // Display popup notification with the error message
+        alert(data.message);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  });
+
+
+ </script>
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const emailInput = document.getElementById('email');
+    const emailError = document.getElementById('emailError');
+
+    emailInput.addEventListener('input', function () {
+      if (!validateEmail(emailInput.value)) {
+        emailError.style.display = 'inline';
+      } else {
+        emailError.style.display = 'none';
+      }
+    });
+
+    function validateEmail(email) {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

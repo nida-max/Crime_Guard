@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Page</title>
+
+    <style>
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: black;
+  background-color: whitesmoke;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bouncing-blob {
+  width: 32vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+}
+
+.bouncing-blob--blue {
+  background: #4783c7;
+}
+
+.bouncing-blob--white {
+  background: #ffffff;
+  z-index: 2;
+  width: 15vw;
+}
+
+.bouncing-blob--purple {
+  background: #8c8ff1;
+}
+
+.bouncing-blob--pink {
+  background: #e289cd50;
+}
+
+.bouncing-blobs-container {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bouncing-blobs-glass {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(140px);
+  backdrop-filter: blur(140px);
+  pointer-events: none;
+}
+
+.bouncing-blobs {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000; /* Ensure the video is above other content */
+        }
+
+        /* Adjust the video width and height as needed */
+        .video-container video {
+           
+            width: 600px; /* Increased width */
+            height: 400px;
+        }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Align items to the center of the flex container */
+    margin-top: 50px;
+    margin-left: 50px;
+    max-width: 1200px; /* Adjust max-width as needed */
+}
+
+.box {
+    width: calc(20% - 20px); /* Adjust width as needed */
+    margin: 0 10px 20px;
+    background-color: rgba(70, 106, 136, 0.164);
+
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 50px; /* Adjust padding to increase height */
+}
+
+
+.box:hover {
+    background:  rgb(81, 81, 226); 
+  
+}
+
+.box:hover {
+    color: #d4d4d4;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: justify;
+}
+
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        .header .logo {
+             color: #000;
+  margin-left: 10px;
+  filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.2));
+ 
+  width: 180px; /* Adjust the width as needed */
+}
+ 
+
+            
+           
+            .ab{margin-left: 450px;}
+
+
+
+
+        .nav-items {
+            display: flex;
+            justify-content: space-around;
+            margin-left: 30px;
+            align-items: center;
+            background-color: #f5f5f5;
+           
+        }
+            
+        
+
+            .nav-items a {
+                text-decoration: none;
+                color: #000;
+                font-size: 20px;
+                padding: 40px 30px;
+            }
+         h5 {
+font-family: sans-serif;
+font-size: 20px;
+color: #000;
+font-weight: bold;
+margin-right: 280px;
+text-transform: uppercase;
+margin-left: 2px;
+}
+.about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #302f49;
+            color: white;
+            margin-bottom: 20px; /* Added margin-bottom */
+        }
+.intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+            background-color: #302f49;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+            .intro h1 {
+                font-family: sans-serif;
+                font-size: 40px;
+                color: #fff;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            .intro p {
+                font-size: 20px;
+                color: #d1d1d1;
+                text-transform: uppercase;
+                margin: 20px 0;
+            }
+    
+    </style>
+</head>
+<body>
+    
+  <header class="header">
+        <nav class="nav-items">
+            <div class="logo-container">
+                <img src="pic/h.png" class="logo" />
+
+            </div>
+            <h5>CRIME GUARD</h5>
+
+            <div class="ab">
+            <a href="/home">Home </a>
+            <a href="/about">About</a>
+           <a href="/report" >Report</a>
+            <a href="/contactus">Contact</a>
+            <a href="/signup">Registeration</a>
+            </div>
+        </nav>
+    </header>
+    <div class="intro">
+        <h1>Guidance</h1>
+        <p>Taking care of yourself is your responsibility.</p>
+        
+    </div>
+<main>
+
+    <div class="container">
+        <div class="box" onclick="window.location.href='https://www.reddit.com/r/TrueUnpopularOpinion/comments/15cl54y/physically_attacking_thieves_during_the_act/?rdt=44905'">
+            <h1>Theft</h1>
+            <p>Immediately move to a safe location and ensure personal safety.
+                If possible, try to get a clear description of the thief, including their appearance, clothing, and any distinguishing features.
+                Notify law enforcement authorities by calling the emergency number or using the online crime reporting portal.
+                Avoid confronting the thief directly to prevent escalation of the situation.</p>
+        </div>
+        <div class="box" onclick="window.location.href='https://www.quora.com/If-someone-snatches-your-belongings-and-you-chase-them-down-and-forcefully-try-to-recover-them-and-that-person-shoots-you-with-a-gun-in-self-defense-is-that-covered-under-stand-your-ground-laws'">
+            <h1>Snatching</h1>
+            <p>If someone attempts to snatch your belongings, try to remain calm and avoid resisting if it puts you at risk of injury.
+                If the snatcher flees, note their direction of escape and any identifying details to report to law enforcement.
+                Contact emergency services immediately to report the incident and provide as much information as possible.</p>
+        </div>
+        <div class="box" onclick="window.location.href='https://www.quora.com/What-are-a-persons-rights-during-an-attempted-robbery-Are-they-allowed-to-defend-themselves-if-they-can-do-so-without-hurting-the-robber-or-anyone-else-nearby'">
+            <h1>Robbery</h1>
+            <p>In the event of a robbery, prioritize personal safety and comply with the robber's demands to avoid putting yourself in harm's way.
+                If possible, try to remember details about the robber's appearance, weapon (if any), and any accomplices.
+                Once safe, contact law enforcement authorities immediately to report the robbery and provide a detailed description of the incident.</p>
+        </div>
+        <div class="box" onclick="window.location.href='https://www.quora.com/Is-it-considered-self-defense-if-someone-kills-someone-for-trying-to-rape-them'">
+            <h1>Rape or Sexual Assault</h1>
+            <p>If you are the victim of rape or sexual assault, prioritize your safety and well-being above all else.
+                Seek immediate medical attention, even if you do not wish to report the crime immediately. Medical professionals can provide crucial support and collect evidence.
+                Preserve any physical evidence, such as clothing or belongings, and avoid bathing or changing clothes until after a medical examination.
+                Report the incident to law enforcement as soon as possible, either directly or through the online crime reporting portal. Provide as much information as you can recall about the perpetrator and the circumstances of the assault.</p>
+        </div>
+
+
+        <div class="box" onclick="window.location.href='https://www.fighterlaw.com/when-is-self-defense-justified-in-a-domestic-violence-case/'">
+            <h1>Domestic Violence</h1>
+            <p>If you're facing domestic violence, prioritize your safety by seeking immediate help from local authorities or support organizations. Develop a safety plan, consider legal options like obtaining a restraining order, and reach out to trusted friends or family for support. Remember, you're not alone, and there are resources available to assist you in protecting yourself and getting the help you need.Remember, you are not alone, and there are people who can help you through this difficult time. Don't hesitate to reach out for support and take steps to ensure your safety and well-being.
+
+            </p>
+        </div>
+        <div class="box" onclick="window.location.href='https://www.paradigmshift.com.pk/self-defence-pakistan/">
+            <h1>Public order offenses</h1>
+            <p>  Keeping a cool head and avoiding escalation can prevent conflicts from worsening. Deep breathing and composure help in handling tense situations.
+                
+                 Use calm and empathetic communication to defuse confrontations. Active listening and understanding can resolve conflicts peacefully.
+                
+                 Clearly state boundaries and rights firmly but respectfully to deter aggression and establish control.
+                
+                 Know when to seek assistance from authorities or bystanders to prevent situations from escalating. Contacting law enforcement or backup can maintain public order and safety.
+                
+                When possible, avoid volatile situations altogether.</p>
+        </div>
+        <div class="box" onclick="window.location.href='https://opssecuritygroup.com/blog-self-defense-tips-tactics-kidnapping-survival/'">
+            <h1>Kidnapping</h1>
+            <p>Awareness and Prevention: Stay vigilant, avoid isolated areas, and trust your instincts.
+
+                Escape Techniques: Create distance, run to safety, or attract attention.
+                
+                Physical Resistance: Target vulnerable areas to incapacitate the attacker.
+                
+                Verbal De-escalation: Remain calm and negotiate with the kidnapper if possible.
+                
+                Carry Personal Safety Devices: Use tools like pepper spray or a personal alarm.
+                
+                Training: Take self-defense classes to learn practical techniques.
+                
+                Always prioritize your safety and take appropriate action to protect yourself.</p>
+        </div>
+        <div class="box" onclick="window.location.href='https://ctc.westpoint.edu/drug-trafficking-terrorism-and-civilian-self-defense-in-peru/'">
+            <h1>Drug trafficking</h1>
+            <p> Stay informed about your surroundings and avoid areas known for drug trafficking.
+
+                Politely decline any offers or invitations related to drug trafficking.
+                
+                 If approached or threatened, calmly remove yourself from the situation and seek help from authorities.
+                
+                Understand the legal consequences of drug-related activities.
+                
+                 Build connections with law enforcement and community organizations to report suspicious activities and seek assistance if needed.
+                
+                 Carry personal safety devices and know-how to use them effectively in emergencies.
+                </p>
+        </div>
+        <div class="box" onclick="window.location.href='https://consumer.ftc.gov/consumer-alerts/2019/09/self-defense-against-scams'">
+            <h1>Fraud</h1>
+            <p>Safeguard sensitive data and be cautious about sharing it online or over the phone.
+
+                Always verify the identity of individuals or organizations requesting personal information or financial transactions.
+                
+               Stay informed about common fraud schemes and learn to recognize red flags and suspicious behavior.
+                
+               Use secure websites for online transactions and avoid clicking on links from unknown sources.
+                
+              Regularly check bank statements, credit reports, and financial transactions for any unauthorized activity.
+                
+              If you suspect fraud, report it to the appropriate authorities to prevent others from being victimized and potentially recover lost funds.</p>
+        </div>
+
+        <div class="box" onclick="window.location.href='https://www.cambridge.org/core/books/abs/counterterrorism-strategies-in-a-fragmented-international-legal-order/anticipatory-selfdefence-against-terrorists/731DCFCE135EAC94D2238927B828B8B8">
+            <h1>Counterterrorism</h1>
+            <p>Self-defense against terrorism involves staying vigilant, reporting suspicious activity, having an emergency plan, cooperating with authorities, avoiding high-risk areas, securing personal belongings, and engaging in community efforts to prevent radicalization.</p>
+        </div>
+        <div class="box" onclick="window.location.href='https://www.abacademies.org/articles/criteria-and-basic-signs-of-the-lawful-protection-of-the-persons-interests-from-socially-dangerous-encroachment-as-a-fac-8565.pdf'">
+            <h1>Encroachment</h1>
+            <p>To defend against encroachment, individuals can take legal action, document property boundaries, communicate with neighbors, install physical barriers, display "No Trespassing" signs, join neighborhood watch programs, and seek assistance from law enforcement or property management authorities when necessary.</p>
+        </div>
+        <div class="box" onclick="window.location.href='https://quora.com/How-often-do-gang-members-manage-to-successfully-defend-themselves-with-a-handgun-against-an-attempt-on-their-lives-also-with-a-firearm'">
+            <h1>Gang-related crimes</h1>
+            <p>To defend against gang-related crimes, prioritize personal safety by avoiding high-risk areas, staying vigilant, and adhering to local safety guidelines. Build strong community networks, report any concerning behavior promptly, and refrain from engaging in activities that may attract gang attention. If faced with a confrontation, remain calm, avoid escalating the situation, and seek assistance from law enforcement or trusted individuals in the community.</p>
+        </div>
+
+    </div>
+
+
+    <div class="video-container">
+        <video controls>
+            <!-- Add your video source here -->
+            <source src="/video/selfdefence.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        
+    </div>
+    
+
+
+</main>
+
+
+
+  
+    <script>
+        const MIN_SPEED = 1.5
+        const MAX_SPEED = 2.5
+
+        function randomNumber(min, max) {
+            return Math.random() * (max - min) + min
+        }
+
+        class Blob {
+            constructor(el) {
+                this.el = el
+                const boundingRect = this.el.getBoundingClientRect()
+                this.size = boundingRect.width
+                this.initialX = randomNumber(0, window.innerWidth - this.size)
+                this.initialY = randomNumber(0, window.innerHeight - this.size)
+                this.el.style.top = `${this.initialY}px`
+                this.el.style.left = `${this.initialX}px`
+                this.vx =
+                    randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+                this.vy =
+                    randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+                this.x = this.initialX
+                this.y = this.initialY
+            }
+
+            update() {
+                this.x += this.vx
+                this.y += this.vy
+                if (this.x >= window.innerWidth - this.size) {
+                    this.x = window.innerWidth - this.size
+                    this.vx *= -1
+                }
+                if (this.y >= window.innerHeight - this.size) {
+                    this.y = window.innerHeight - this.size
+                    this.vy *= -1
+                }
+                if (this.x <= 0) {
+                    this.x = 0
+                    this.vx *= -1
+                }
+                if (this.y <= 0) {
+                    this.y = 0
+                    this.vy *= -1
+                }
+            }
+
+            move() {
+                this.el.style.transform = `translate(${this.x - this.initialX}px, ${this.y - this.initialY
+                    }px)`
+            }
+        }
+
+        function initBlobs() {
+            const blobEls = document.querySelectorAll('.bouncing-blob')
+            const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl))
+
+            function update() {
+                requestAnimationFrame(update)
+                blobs.forEach((blob) => {
+                    blob.update()
+                    blob.move()
+                })
+            }
+
+            requestAnimationFrame(update)
+        }
+
+        initBlobs()
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+   
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: black;
+  background-color: whitesmoke;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bouncing-blob {
+  width: 32vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+}
+
+.bouncing-blob--blue {
+  background: #4783c7;
+}
+
+.bouncing-blob--white {
+  background: #ffffff;
+  z-index: 2;
+  width: 15vw;
+}
+
+.bouncing-blob--purple {
+  background: #8c8ff1;
+}
+
+.bouncing-blob--pink {
+  background: #e289cd50;
+}
+
+.bouncing-blobs-container {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bouncing-blobs-glass {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(140px);
+  backdrop-filter: blur(140px);
+  pointer-events: none;
+}
+
+.bouncing-blobs {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+ 
+ h5 {
+     font-family: sans-serif;
+     font-size: 20px;
+     color: #000;
+     font-weight: bold;
+     margin-right: 100px;
+     text-transform: uppercase;
+     margin-left: 2px;
+ }
+
+
+
+ .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f5f5f5;
+            height: 6em;
+        }
+        .header .logo {
+             color: #000;
+  margin-left: 10px;
+  filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.2));
+ 
+  width: 180px; 
+  /* Adjust the width as needed */
+}
+ 
+
+            
+           
+            .ab{margin-left: 550px;}
+
+
+
+
+        .nav-items {
+            display: flex;
+            justify-content: space-around;
+            margin-left: 30px;
+            align-items: center;
+            background-color: #f5f5f5;
+           
+        }
+            
+        
+
+            .nav-items a {
+                text-decoration: none;
+                color: #000;
+                font-size: 20px;
+                padding: 40px 30px;
+            }
+
+            
+            
+           
+
+        .intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+            background-color: #302f49;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+            .intro h1 {
+                font-family: sans-serif;
+                font-size: 40px;
+                color: #fff;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            .intro p {
+                font-size: 20px;
+                color: #d1d1d1;
+                text-transform: uppercase;
+                margin: 20px 0;
+            }
+
+
+       
+
+        h1, h2, p {
+            margin: 0 0 1rem;
+        }
+h1 ,h2 {
+    text-align: center;
+}
+        /* Header styling */
+        header {
+            background-color: #eee;
+            padding: 1rem;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .team-members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.team-member {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a media query to stack the team members in a column on smaller screens */
+@media (max-width: 768px) {
+    .team-members {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h3 {
+    margin-top: 1rem;
+}
+
+.intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+            background-color: #302f49;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+            .intro h1 {
+                font-family: sans-serif;
+                font-size: 40px;
+                color: #fff;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            .intro p {
+                font-size: 20px;
+                color: #d1d1d1;
+                text-transform: uppercase;
+                margin: 20px 0;
+            }
+.learn-more {
+    color: #0a0a0a;
+    padding: 0.5rem 1rem;
+    border: 2px solid #0a0a0a;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 3rem; /* Add top margin */
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 150px; /* Set your preferred width */
+    margin-left: auto; /* Set left margin to auto */
+    margin-right: auto; /* Set right margin to auto */
+}
+
+
+
+        footer{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+		<nav class="nav-items">
+			<div class="logo-container">
+				<img src="/pic/h.png" class="logo" />
+			</div>
+			<h5>CRIME GUARD</h5>
+            <div class="ab">
+            <a href="/home">Home </a>
+            <a href="/about">About</a>
+           <a href="/report" >Report</a>
+            <a href="/contactus">Contact</a>
+            <a href="/signup">Registeration</a>
+            </div>
+        
+		</nav>
+	</header>
+<div class="intro" >
+        
+    
+        <h1 >Lawyers</h1>
+        <p>Empowering People Through Techniqal Information</p>
+        </div>
+
+    <main>
+        
+
+        <div class="team-members">
+
+
+            <div class="team-member">
+                <img src="/pic/rajaMuqsitNawaz.jpg" alt="Raja Muqsit Nawaz Khan " width="50%">
+                <h3>Raja Muqsit Nawaz Khan 
+                    </h3>
+                <p>
+                    Off No 1-2, Dossul ARcade Jinnah Avenue Blue Area Islamabad.
+
+                    </p>
+                    <p>Office : +9251 2604751 -2   
+                        Mobile : +92 3215223311
+
+                        <br>
+                        <a href="mailto:raja.muqsit@rhnkla.com">Email:raja.muqsit@rhnkla.com</a>
+                    </p>
+            </div>
+
+
+            <div class="team-member">
+                <img src="/pic/tahiraKaleem.jpg" alt="Ms. Tahira Kaleem" width="50%">
+                <h3>Ms. Tahira Kaleem</h3>
+                <p>
+                    13 - B Chaklala Scheme No.1, Rawalpindi,Pakistan.
+                    
+                    </p>
+                    <p>Phone : 051-5590408
+                        Mobile : 0303-6506959
+                        
+                        <br>
+                        <a href="mailto:Tahirakaleem@yahoo.com">Email: Tahirakaleem@yahoo.com</a>
+                    </p>
+            </div>
+
+
+            <div class="team-member">
+                <img src="/pic/asadIqbal.jpg" alt="Asad Iqbal Siddiqui"   width="50%">
+                <h3>
+                    Asad Iqbal Siddiqui</h3>
+                <p>M/s Asad, Daham & Co.
+                    Advocates & Corporate  Consultants, 
+                    10-Pearl Centre, 
+                    F-6 Islamabad.
+                    </p>
+                    <p>Office : 051 - 227251, 2874095.
+                        Residence : 051- 4428516, 4410187
+                        Mobile : 0301 - 5554005<br>
+                        <a href="mailto:asadlaw@gmail.com">Email: asadlaw@gmail.com</a>
+                    </p>
+            </div>
+            <div class="team-member">
+                <img src="/pic/syedAbid.jpg" alt="
+                Syed Abid Hussain"  width="50%" >
+                <h3>Syed Abid Hussain</h3>
+                    <p>
+                        Advocate High Court,
+                        Office No. 50, 1st Floor,
+                        Moti Plaza, Muree Road,
+                        Rawalpindi..
+                        
+                        </p>
+                        <p>Residence : 051 - 5562651
+                            Mobile : 0320 4917210.
+                            <br>
+                            <a href="mailto:Syed Abid-Advocate@hotmail. Com">Email: Syed Abid-Advocate @hotmail.Com</a>
+                        </p>
+            </div>
+          
+            
+            <div class="team-member">
+                <img src="/pic/imranAli.jpg" alt="Imran Ali Khan " width="50%">
+                <h3>Imran Ali Khan </h3>
+                <p>
+                    M/s. Imran Law Associates,
+                    Office No. 82, 2nd Floor, Mobee Plaza, Haider Road, Sadar, Rawalpindi 
+                    
+                    </p>
+                    <p>Rawalpindi. Office : 051-7126393
+                        Isb. Office   :  051-287-3255
+                        Mobile : 0333- 5103020, 0321-5103020
+                        
+                        <br>
+                        <a href="mailto:online.justice@hotmail.com">Email:online.justice@hotmail.com</a>
+                    </p>
+            </div>
+            <!-- Example for the 5th team member -->
+            <div class="team-member">
+                <img src="/pic/khawajaMuhammad.jpg" alt="Khawaja Muhammad Farooq Mehta" width="50%">
+                <h3>Khawaja Muhammad Farooq Mehta</h3>
+                <p>
+                    Farooq Law Associates Advocates & Attorneys 201, Dossal Arcade, 47–W, Blue Area Islamabad
+
+                    </p>
+                    <p>Tel#  051- 2271020
+                        Fax# 051- 2272643
+                        Mobile : 0320-4262528
+                        
+                        
+                        <br>
+                        <a href="mailto:farooqlaws@yahoo.com ">Email:farooqlaws@yahoo.com </a>
+                    </p>
+            </div>
+            <!-- Example for the 6th team member -->
+            <div class="team-member">
+                <img src="/pic/muhammadSiddique.jpg" alt="Muhammad Siddique Awan" width="50%">
+                <h3>M/s. JURISTS & ARBITRATORS 
+                    Malik Muhammad Siddique Awan
+                    </h3>
+                <p>
+                    17 - Rabia Bungalows 
+Near DHA-1, Rawalpindi
+
+                    </p>
+                    <p>Office : 051 – 2502710
+                        Mobile : 0300-5010454
+                                       0322-2001002
+                        
+                        
+                        <br>
+                        <a href="mailto:m_siddiqueawan@yahoo.com">Email:m_siddiqueawan@yahoo.com</a>
+                    </p>
+            </div>
+        
+            <div class="team-member">
+                <img src="/pic/syedSaadAli.jpg" alt="Syed Saad Ali Shah" width="50%">
+                <h3>Syed Saad Ali Shah 
+                    </h3>
+                <p>
+                    House No. 625 H, Street No. 40, E-11/3, NPF, Islamabad
+
+                    </p>
+                    <p>
+                        Mobile : +92 3349011304
+                        <br>
+                        <a href="mailto:saadshah12@hotmail.com">Email:saadshah12@hotmail.com</a>
+                    </p>
+            </div>
+        
+           
+            <div class="team-member">
+                <img src="/pic/NaveedMalik.jpg" alt="Naveed Malik" width="50%">
+                <h3>Naveed Malik
+                    </h3>
+                <p>
+                    Off No.3, First Floor , Block 84, G-10/1, Islamabad.
+
+                    </p>
+                    <p>Office : +9251 2855733
+                        +92 3005143626
+                        <br>
+                        <a href="mailto:salim670@gmail.com">Email:salim670@gmail.com</a>
+                    </p>
+            </div>
+        
+            
+        </div>
+
+        <a href="/pic/https://pakistanlawyer.com/" class="learn-more">Learn More</a>
+
+        <div>
+         
+
+    
+    <div class="bouncing-blobs-container">
+        <div class="bouncing-blobs-glass"></div>
+        <div class="bouncing-blobs">
+            <div class="bouncing-blob bouncing-blob--blue"></div>
+            <div class="bouncing-blob bouncing-blob--blue"></div>
+            <div class="bouncing-blob bouncing-blob--blue"></div>
+            <div class="bouncing-blob bouncing-blob--white"></div>
+            <div class="bouncing-blob bouncing-blob--purple"></div>
+            <div class="bouncing-blob bouncing-blob--purple"></div>
+            <div class="bouncing-blob bouncing-blob--pink"></div>
+        </div>
+    </div>
+   
+    <script>
+        const MIN_SPEED = 1.5
+        const MAX_SPEED = 2.5
+
+        function randomNumber(min, max) {
+            return Math.random() * (max - min) + min
+        }
+
+        class Blob {
+            constructor(el) {
+                this.el = el
+                const boundingRect = this.el.getBoundingClientRect()
+                this.size = boundingRect.width
+                this.initialX = randomNumber(0, window.innerWidth - this.size)
+                this.initialY = randomNumber(0, window.innerHeight - this.size)
+                this.el.style.top = `${this.initialY}px`
+                this.el.style.left = `${this.initialX}px`
+                this.vx =
+                    randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+                this.vy =
+                    randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+                this.x = this.initialX
+                this.y = this.initialY
+            }
+
+            update() {
+                this.x += this.vx
+                this.y += this.vy
+                if (this.x >= window.innerWidth - this.size) {
+                    this.x = window.innerWidth - this.size
+                    this.vx *= -1
+                }
+                if (this.y >= window.innerHeight - this.size) {
+                    this.y = window.innerHeight - this.size
+                    this.vy *= -1
+                }
+                if (this.x <= 0) {
+                    this.x = 0
+                    this.vx *= -1
+                }
+                if (this.y <= 0) {
+                    this.y = 0
+                    this.vy *= -1
+                }
+            }
+
+            move() {
+                this.el.style.transform = `translate(${this.x - this.initialX}px, ${this.y - this.initialY
+                    }px)`
+            }
+        }
+
+        function initBlobs() {
+            const blobEls = document.querySelectorAll('.bouncing-blob')
+            const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl))
+
+            function update() {
+                requestAnimationFrame(update)
+                blobs.forEach((blob) => {
+                    blob.update()
+                    blob.move()
+                })
+            }
+
+            requestAnimationFrame(update)
+        }
+
+        initBlobs()
+
+    </script>
+</body>
+</html>

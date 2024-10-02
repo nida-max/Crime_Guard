@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Terms Of Services UI Design</title>
+	
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --bg-clr: #f5f5f5;
+  --white: #fff;
+  --title-clr: #394168;
+  --pry-text-clr: #b3b3b3;
+  --scn-text-clr: #838384;
+  --btn-hvr-clr: #5363b0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* Add these styles to make the page spread to the screen */
+body {
+  margin: 0; /* Remove default body margin */
+  overflow: hidden; /* Prevent horizontal scrollbar */
+}
+
+.flex_center {
+  width: 100vw; /* 100% of viewport width */
+  height: 100vh; /* 100% of viewport height */
+}
+.tc_main {
+  width: 80%; /* Adjust the width percentage as needed */
+  max-width: 1200px; /* Add a maximum width if desired */
+}
+
+/* Adjustments to center content */
+.tc_main {
+  margin: 20px auto; /* Center the content horizontally */
+}
+
+.tc_main .tc_btns {
+  width: 80%; /* Adjust the width percentage as needed */
+  max-width: 400px; /* Add a maximum width if desired */
+  margin: 0 auto; /* Center the buttons */
+}
+
+.tc_main .title{
+  color: var(--title-clr);
+  margin-bottom: 5px;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.tc_main .tc_content .tc_bottom .title{
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.tc_main .tc_content{
+  width: 100%;
+  margin: 35px 0;
+  height: calc(550px - 150px);
+}
+
+
+
+.tc_main .tc_content .tc_top{
+  margin: 0 35px 35px;
+}
+
+.tc_main .tc_content .tc_bottom{
+  padding: 0 35px;
+  overflow: auto;
+  height: calc(100% - 210px);
+}
+
+.tc_main .tc_content .tc_top .icon{
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--title-clr);
+}
+
+.tc_main .tc_content .tc_top .info{
+  color: var(--scn-text-clr);
+}
+
+.tc_main .tc_content .tc_bottom .info p{
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.tc_main .tc_btns button{
+  width: 125px;
+  padding: 10px;
+  margin: 0 10px;
+  border: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.5s ease;
+}
+
+.tc_main .tc_btns button.accept{
+  background: var(--title-clr);
+  color: var(--white);
+}
+
+.tc_main .tc_btns button.decline{
+  border: 1px solid var(--title-clr);
+  background: transparent;
+  color: var(--title-clr);
+}
+
+.tc_main .tc_btns button.decline:hover{
+  background: var(--title-clr);
+  color: var(--white);
+}
+
+.tc_main .tc_btns button.accept:hover{
+  background: var(--btn-hvr-clr);
+}
+    </style>
+	<script src="https://kit.fontawesome.com/3ef3559250.js" crossorigin="anonymous"></script>
+</head>	
+<body>
+
+<section class="flex_center">
+  <div class="tc_main">
+    <div class="tc_content">
+      <div class="tc_top">
+        <div class="icon">
+          <i class="fa-solid fa-clipboard"></i>
+        </div>
+        <div class="title">
+          <p>Terms of serivce</p>
+        </div>
+        <div class="info">
+            Welcome to our Crime Guard. By using this service, you agree to report genuine information responsibly, ensuring the integrity of our platform. Empower community safety with our online crime reporting portal. We encourage users to share accurate details, fostering a secure environment. Explore our terms to understand the principles that govern this collaborative effort against crime.
+            Please review our terms for guidelines and legal compliance.
+        </div>
+      </div>
+      <div class="tc_bottom">
+        <div class="title">
+          <p>please go through the terms before Accepting it.</p>
+        </div>
+        <div class="info">
+          <p>By using the crime guard ("the Portal"), you agree to comply with and be bound by these terms and conditions ("Terms"). If you do not agree to these Terms, please refrain from using the Portal.</p>
+          <p>Users are encouraged to report genuine and accurate information related to criminal activities through the Portal.</p>
+          <p>False reporting, misuse, or any attempt to compromise the integrity of the reporting system may lead to legal action.</p>
+          <p>To access certain features of the Portal, users may be required to register. Users agree to provide accurate, current, and complete information during the registration process.</p>
+          <p>Users are responsible for maintaining the confidentiality of their account information and password.</p>
+          <p>Our Privacy Policy outlines how user information is collected, used, and disclosed. Users are encouraged to review our Privacy Policy to understand the practices.</p>
+          <p>Users agree not to engage in activities that may compromise the security, functionality, or availability of the Portal.</p>
+          <p>Prohibited activities include but are not limited to hacking, data mining, and any unauthorized attempts to access or interfere with the Portal.</p>
+          <p>All content and materials available on the Portal, including but not limited to text, graphics, logos, icons, images, and software, are the property of the Portal owner and are protected by applicable intellectual property laws.</p>
+          <p>The Portal owner and its affiliates shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of the use or inability to use the Portal.</p>
+          <p>These Terms shall be governed by and construed in accordance with the laws of Pak. </p>
+          <p>The Portal owner reserves the right to modify or update these Terms at any time without prior notice. Users are responsible for regularly reviewing the Terms.</p>
+          <p>For questions or concerns regarding these Terms, please contact us at [Your Contact Information].</p>
+        </div>
+      </div>
+    </div>
+    <div class="tc_btns">
+      <button class="accept">
+        Accept
+      </button>
+      <button class="decline">
+        Decline
+      </button>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

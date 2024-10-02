@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guidelines</title>
+
+    <style>
+        :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: black;
+  background-color: whitesmoke;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bouncing-blob {
+  width: 32vw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transform-origin: left top;
+}
+
+.bouncing-blob--blue {
+  background: #4783c7;
+}
+
+.bouncing-blob--white {
+  background: #ffffff;
+  z-index: 2;
+  width: 15vw;
+}
+
+.bouncing-blob--purple {
+  background: #8c8ff1;
+}
+
+.bouncing-blob--pink {
+  background: #e289cd50;
+}
+
+.bouncing-blobs-container {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bouncing-blobs-glass {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(140px);
+  backdrop-filter: blur(140px);
+  pointer-events: none;
+}
+
+.bouncing-blobs {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.main-content {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 20px; /* Adjust padding as needed */
+}
+
+.main-content h3 {
+    color:  black;
+    font-size: 24px; /* Increase font size for emphasis */
+    font-weight: bold; /* Emphasize the importance of the statement */
+    margin-bottom: 20px; /* Add some spacing below the heading */
+    
+}
+
+.header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #f5f5f5;
+ }
+
+ .header .logo {
+  color: #000;
+  margin-left: 10px;
+  filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.2));
+ 
+  width: 180px; /* Adjust the width as needed */
+}
+
+
+
+
+.container {
+    display: flex;
+    
+    flex-direction: row !important; /* Display items in a single row */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: flex-start; /* Align items to the start of the flex container */
+    margin-top: 100px;
+    margin-left: 20em;
+    max-width: 1200px; /* Adjust max-width as needed */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+.box {
+    width: calc(20% - 20px); /* Adjust width as needed */
+    margin: 0 10px 20px;
+    background-color: rgba(70, 106, 136, 0.164);
+
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 50px; /* Adjust padding to increase height */
+}
+
+
+.box:hover {
+    background:  rgb(81, 81, 226); 
+  
+}
+
+.box:hover {
+    color: #d4d4d4;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    text-align: center;
+}
+
+ .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f5f5f5;
+        }
+        .header .logo {
+             color: #000;
+  margin-left: 10px;
+  filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.2));
+ 
+  width: 180px; /* Adjust the width as needed */
+}
+ 
+
+            
+           
+            .ab{margin-left: 400px;}
+
+
+
+
+        .nav-items {
+            display: flex;
+            justify-content: space-around;
+            margin-left: 30px;
+            align-items: center;
+            background-color: #f5f5f5;
+           
+        }
+            
+        
+
+            .nav-items a {
+                text-decoration: none;
+                color: #000;
+                font-size: 20px;
+                padding: 40px 30px;
+            }
+
+            
+            
+           
+
+ h5 {
+     font-family: sans-serif;
+     font-size: 20px;
+     color: #000;
+     font-weight: bold;
+     margin-right: 100px;
+     text-transform: uppercase;
+     margin-left: 2px;
+ }
+
+
+
+ .ab{margin-left: 550px;}
+
+
+
+
+        .nav-items {
+            display: flex;
+            justify-content: space-around;
+            margin-left: 30px;
+            align-items: center;
+            background-color: #f5f5f5;
+           
+        }
+            
+        
+
+            .nav-items a {
+                text-decoration: none;
+                color: #000;
+                font-size: 20px;
+                padding: 40px 30px;
+            }
+
+            
+
+   
+ .intro {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+            background-color: #302f49;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+            .intro h1 {
+                font-family: sans-serif;
+                font-size: 40px;
+                color: #fff;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin: 0;
+            }
+             .intro p {
+                font-size: 20px;
+                color: #d1d1d1;
+                text-transform: uppercase;
+                margin: 20px 0;
+            }
+
+    </style>
+</head>
+<body>
+    
+  <header class="header">
+    <nav class="nav-items">
+        <div class="logo-container">
+            <img src="/pic/h.png" class="logo" />
+        </div>
+        <h5>CRIME GUARD</h5>
+        <div class="ab">
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/report">Report</a>
+        <a href="/contactus">Contact</a>
+        <a href="/signup">Registeration</a>
+    
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="intro">
+        <p>To protect and calm individuals in volatile situations!</p>
+    </div>
+       
+    </div>
+    <div class="container">
+        <div class="box" >
+            <h1>Stay Calm</h1>
+            <p>Keeping a cool head and avoiding escalation can prevent conflicts from worsening. Deep breathing and composure help in handling tense situations.</p>
+        </div>
+        <div class="box" >
+            <h1>Verbal De-escalation</h1>
+            <p>Use calm and empathetic communication to defuse confrontations. Active listening and understanding can resolve conflicts peacefully.</p>
+        </div>
+        <div class="box" >
+            <h1>Seek Help</h1>
+            <p>Know when to seek assistance from authorities or bystanders to prevent situations from escalating. Contacting law enforcement.</p>
+        </div>
+        <div class="box">
+            <h1>Avoid Confrontation</h1>
+            <p>When possible, avoid volatile situations altogether. Removing oneself from potential conflict environments reduces the risk of harm.</p>
+        </div>
+   
+
+    </div>
+
+</main>
+
+
+
+      
+
+
+    <div class="bouncing-blobs-container">
+        <div class="bouncing-blobs-glass"></div>
+        <div class="bouncing-blobs">
+            <div class="bouncing-blob bouncing-blob--blue"></div>
+            <div class="bouncing-blob bouncing-blob--blue"></div>
+            <div class="bouncing-blob bouncing-blob--blue"></div>
+            <div class="bouncing-blob bouncing-blob--white"></div>
+            <div class="bouncing-blob bouncing-blob--purple"></div>
+            <div class="bouncing-blob bouncing-blob--purple"></div>
+            <div class="bouncing-blob bouncing-blob--pink"></div>
+        </div>
+    </div>
+   
+    <script>
+        const MIN_SPEED = 1.5
+        const MAX_SPEED = 2.5
+
+        function randomNumber(min, max) {
+            return Math.random() * (max - min) + min
+        }
+
+        class Blob {
+            constructor(el) {
+                this.el = el
+                const boundingRect = this.el.getBoundingClientRect()
+                this.size = boundingRect.width
+                this.initialX = randomNumber(0, window.innerWidth - this.size)
+                this.initialY = randomNumber(0, window.innerHeight - this.size)
+                this.el.style.top = `${this.initialY}px`
+                this.el.style.left = `${this.initialX}px`
+                this.vx =
+                    randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+                this.vy =
+                    randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+                this.x = this.initialX
+                this.y = this.initialY
+            }
+
+            update() {
+                this.x += this.vx
+                this.y += this.vy
+                if (this.x >= window.innerWidth - this.size) {
+                    this.x = window.innerWidth - this.size
+                    this.vx *= -1
+                }
+                if (this.y >= window.innerHeight - this.size) {
+                    this.y = window.innerHeight - this.size
+                    this.vy *= -1
+                }
+                if (this.x <= 0) {
+                    this.x = 0
+                    this.vx *= -1
+                }
+                if (this.y <= 0) {
+                    this.y = 0
+                    this.vy *= -1
+                }
+            }
+
+            move() {
+                this.el.style.transform = `translate(${this.x - this.initialX}px, ${this.y - this.initialY
+                    }px)`
+            }
+        }
+
+        function initBlobs() {
+            const blobEls = document.querySelectorAll('.bouncing-blob')
+            const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl))
+
+            function update() {
+                requestAnimationFrame(update)
+                blobs.forEach((blob) => {
+                    blob.update()
+                    blob.move()
+                })
+            }
+
+            requestAnimationFrame(update)
+        }
+
+        initBlobs()
+
+    </script>
+</body>
+</html>

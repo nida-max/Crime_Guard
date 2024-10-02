@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Crime</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/report.css" />
+</head>
+
+<body>
+     <div class="bouncing-blobs-container">
+     <div class="bouncing-blobs-glass"></div>
+     <div class="bouncing-blobs">
+         <div class="bouncing-blob bouncing-blob--blue"></div>
+         <div class="bouncing-blob bouncing-blob--blue"></div>
+         <div class="bouncing-blob bouncing-blob--blue"></div>
+         <div class="bouncing-blob bouncing-blob--white"></div>
+         <div class="bouncing-blob bouncing-blob--purple"></div>
+         <div class="bouncing-blob bouncing-blob--purple"></div>
+         <div class="bouncing-blob bouncing-blob--pink"></div>
+     </div>
+ </div>
+    <header class="header">
+        <nav class="nav-items">
+            <div class="logo-container">
+                <img src="pic/h.png" class="logo" />
+            </div>
+            <h5>CRIME GUARD</h5>
+
+            <div class="ab">
+            <a href="/home">Home </a>
+            <a href="/about">About</a>
+           <a href="/report" >Report</a>
+            <a href="/contactus">Contact</a>
+            <a href="/signup">Registeration</a>
+            </div>
+        </nav>
+        
+        
+    </header>
+   
+        <div class="intro" style="margin-bottom: 10px;">
+            <h1>Report crime</h1>
+        </div>
+
+      
+
+
+
+             
+    <!-- <h3 class="title" style="margin-right: 15px;">Register Complaint</h3> -->
+
+    <p class="message" style="text-align: center; margin-bottom: 15px;">Register your complaint for further legal procedure!</p>
+          
+                
+
+    <div class="form-container">
+        
+        <form action="/report" method="post" >
+
+            
+            <div class="form-field">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-field">
+                <label for="type">Type:</label>
+                <select name="type" id="type" placeholder="Type" class="input">
+                           
+                    <option value="Snatching">Snatching</option>
+                    <option value="Robbery">Robbery</option>
+                    <option value="Domestic Violence">Domestic Violence</option>
+                    <option value="Sexual assault">Sexual assault</option>
+                    <option value="Public order offenses">Public order offenses</option>
+                    <option value="Counterterrorism">Counterterrorism</option>
+                    <option value="Fraud">Fraud</option>
+                    <option value="Human trafficking">Human trafficking</option>
+                    <option value="Burglary">Burglary</option>
+                    <option value="Kidnapping">Kidnapping</option>
+                    <option value="Drug trafficking">Drug trafficking</option>
+                    <option value="Gang-related crimes">Gang-related crimes</option>
+                    <option value="Organized crime">Organized crime</option>
+                    <option value="Cybercrime">Cybercrime</option>
+                    <option value="Encroachment">Encroachment</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="area">Area:</label>
+                <select name="area" id="area" placeholder="Area" class="input" required >
+                            
+                    <option value="Nawababad">Nawababad</option>
+                    <option value="Riasatabad">Riasatabad</option>
+                    <option value="New City">New City</option>
+                    <option value="Cantt Area">Cantt Area</option>
+                    <option value="Basti">Basti</option>
+                    <option value="Wah Model Town">Wah Model Town</option>
+                    <option value="Kohistan">Kohistan</option>
+                    <option value="Gulshan-e-Anwar">Gulshan-e-Anwar</option>
+                    <option value="Gulbarg">Gulbarg</option>
+                    <option value="others">others</option>
+                    
+                </select>
+            </div>
+            <div class="form-field">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-field">
+                <label for="guilty">Name of Suspect:</label>
+                <input type="text" id="guilty" name="guilty" required>
+            </div>
+            <div class="form-field">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" style="width: 100%;" ></textarea>
+            </div>
+            <label for="file-input" class="drop-container">
+                <span class="form-title">Upload your file</span>
+                <span class="drop-title">Drop files here</span>
+                <input type="file" accept="image/*"  id="file-input">
+            </label>
+            
+           <input class="button2" type="submit">
+           
+        </form>
+    </div>
+
+
+   
+    
+
+
+<script>
+    const MIN_SPEED = 1.5
+    const MAX_SPEED = 2.5
+
+    function randomNumber(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    class Blob {
+        constructor(el) {
+            this.el = el
+            const boundingRect = this.el.getBoundingClientRect()
+            this.size = boundingRect.width
+            this.initialX = randomNumber(0, window.innerWidth - this.size)
+            this.initialY = randomNumber(0, window.innerHeight - this.size)
+            this.el.style.top = `${this.initialY}px`
+            this.el.style.left = `${this.initialX}px`
+            this.vx =
+                randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+            this.vy =
+                randomNumber(MIN_SPEED, MAX_SPEED) * (Math.random() > 0.5 ? 1 : -1)
+            this.x = this.initialX
+            this.y = this.initialY
+        }
+
+        update() {
+            this.x += this.vx
+            this.y += this.vy
+            if (this.x >= window.innerWidth - this.size) {
+                this.x = window.innerWidth - this.size
+                this.vx *= -1
+            }
+            if (this.y >= window.innerHeight - this.size) {
+                this.y = window.innerHeight - this.size
+                this.vy *= -1
+            }
+            if (this.x <= 0) {
+                this.x = 0
+                this.vx *= -1
+            }
+            if (this.y <= 0) {
+                this.y = 0
+                this.vy *= -1
+            }
+        }
+
+        move() {
+            this.el.style.transform = `translate(${this.x - this.initialX}px, ${this.y - this.initialY
+                }px)`
+        }
+    }
+
+    function initBlobs() {
+        const blobEls = document.querySelectorAll('.bouncing-blob')
+        const blobs = Array.from(blobEls).map((blobEl) => new Blob(blobEl))
+
+        function update() {
+            requestAnimationFrame(update)
+            blobs.forEach((blob) => {
+                blob.update()
+                blob.move()
+            })
+        }
+
+        requestAnimationFrame(update)
+    }
+
+    initBlobs()
+
+</script>
+
+    
+</body>
+</html>
