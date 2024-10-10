@@ -24,7 +24,7 @@ nltk.download('wordnet')
 
 def send_emails():
     # Email Configuration
-    email_sender = 'nidatariq865@gmail.com'
+    email_sender = 'your@gmail.com'
     email_password = 'your_password'
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
